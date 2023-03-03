@@ -1,7 +1,18 @@
-require('dotenv').config();
+const axios = require("axios");
 
-const apiKey= process.env.API_KEY;
 
+// env variable
+require("dotenv").config();
+// api key variable
+const apiKey = process.env.API_KEY;
+
+axios.get("https://api.chatgpt.com/query?text=Hello")
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 /* Create click event for when the chek button is complete
 
@@ -10,23 +21,17 @@ animation should be something like fireworks and a sound bite
 
 // new code name achievement checklist
 
-// this check list should be interchangeable with whatever tasks you are trying to complete. 
+// this check list should be interchangeable with whatever tasks you are trying to complete.
 
-// this checklist will allow you to set tasks or goals and complete them like steps in a video game. 
+// this checklist will allow you to set tasks or goals and complete them like steps in a video game.
 
+// when each "checkbox" is completed the checkbox is locked.
 
-// when each "checkbox" is completed the checkbox is locked. 
+// if the checkbox was clicked by mistake or task was not fully complete , a 4 digit lock code is required and a "focus penalty(fp) " must be performed
 
-// if the checkbox was clicked by mistake or task was not fully complete , a 4 digit lock code is required and a "focus penalty(fp) " must be performed 
+// FP's are randomly generated using chatgpt api
 
-// FP's are randomly generated using chatgpt api 
-
-
-
-
-
-
- //* below is starter code to use chatgpt API *//
+//* below is starter code to use chatgpt API *//
 
 /*const openai = require('openai')('<your_api_key>');
 
